@@ -22,21 +22,86 @@ cat > "$OUT" << EOF
 <title>THE UNIVERSAL HIVE</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0c0d0b;color:#eeeee6;font-family:system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem}
-.card{background:#111;border:1px solid #8fa87a;border-radius:14px;padding:2.5rem 2rem;max-width:420px;width:100%;text-align:center;box-shadow:0 0 48px rgba(143,168,122,.18)}
-h1{color:#8fa87a;font-size:1.6rem;letter-spacing:.08em;margin-bottom:.4rem}
-.sub{color:#8fa87a;opacity:.65;font-size:.85rem;margin-bottom:2rem}
-.btn{display:inline-block;background:#8fa87a;color:#0c0d0b;font-weight:800;padding:1rem 2.2rem;border-radius:10px;text-decoration:none;font-size:1.05rem}
-.btn:active{transform:scale(.97)}
-.meta{margin-top:1.6rem;font-size:.7rem;color:#8fa87a;opacity:.45}
+body{
+  background:#0c0d0b;
+  color:#eeeee6;
+  font-family:system-ui,-apple-system,sans-serif;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.5rem;
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(143,168,122,.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(143,168,122,.06) 0%, transparent 50%);
+}
+.card{
+  background:#111;
+  border:1px solid #8fa87a;
+  border-radius:16px;
+  padding:3rem 2.2rem;
+  max-width:440px;
+  width:100%;
+  text-align:center;
+  box-shadow:
+    0 0 60px rgba(143,168,122,.15),
+    inset 0 1px 0 rgba(143,168,122,.2);
+  position:relative;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px solid rgba(143,168,122,.15);
+  border-radius:10px;
+  pointer-events:none;
+}
+h1{
+  color:#8fa87a;
+  font-size:1.7rem;
+  letter-spacing:.12em;
+  font-weight:700;
+  margin-bottom:.3rem;
+}
+.sub{
+  color:#8fa87a;
+  opacity:.7;
+  font-size:.9rem;
+  letter-spacing:.04em;
+  margin-bottom:2.2rem;
+}
+.btn{
+  display:inline-block;
+  background:#8fa87a;
+  color:#0c0d0b;
+  font-weight:800;
+  padding:1.1rem 2.6rem;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:1.1rem;
+  letter-spacing:.04em;
+  box-shadow:0 4px 24px rgba(143,168,122,.35);
+  transition:transform .15s, box-shadow .15s;
+}
+.btn:hover,.btn:active{
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(143,168,122,.5);
+}
+.meta{
+  margin-top:2rem;
+  font-size:.72rem;
+  color:#8fa87a;
+  opacity:.5;
+  letter-spacing:.06em;
+}
 </style>
 </head>
 <body>
 <div class="card">
   <h1>THE UNIVERSAL HIVE</h1>
-  <p class="sub">Site.pro Referral</p>
-  <a class="btn" href="$REF_URL">GET STARTED</a>
-  <p class="meta">Ink · Moss · Paper · Prime Directive</p>
+  <p class="sub">Prime Directive Active</p>
+  <a class="btn" href="$REF_URL">ENTER</a>
+  <p class="meta">INK · MOSS · PAPER</p>
 </div>
 </body>
 </html>
