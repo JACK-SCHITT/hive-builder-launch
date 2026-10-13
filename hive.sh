@@ -1,38 +1,15 @@
 #!/bin/sh
-# Universal Hive — Site.pro Builder (iSH full local setup)
-# Paste this entire file into iSH, save as hive.sh, then: sh hive.sh
+# Universal Hive — Site.pro Referral Launcher
+# Run in iSH: sh hive.sh
 
-echo "🐝 Universal Hive — starting local setup..."
+echo "🐝 Universal Hive — referral launcher"
 
-# --- API call ---
-API="https://site.pro/api/requestLogin"
-USER="apikey0"
-PASS="YEaCqH/fxPI0HnImDtVJm0xOi2R9IY8ICqlHwg80LlUsjZjS"
+REF_URL="https://site.pro/?ref=2e06375fc2f1adee33bdabc39218f9c2"
 
-DOMAIN="krackerjackai.site.pro"
-IP="66.228.61.140"
-SSH_USER="KRACKERJACK1134"
-SSH_PASS="NoPassword1134"
-DIR="/home/KRACKERJACK1134/domains/krackerjackai.site.pro/public_html"
-
-BODY='{"type":"ssh","domain":"'"$DOMAIN"'","apiUrl":"'"$IP"'","username":"'"$SSH_USER"'","password":"'"$SSH_PASS"'","uploadDir":"'"$DIR"'","lang":"en","more":true}'
-
-echo "Calling Site.pro API..."
-RESP=$(curl -s -X POST "$API" -u "$USER:$PASS" -H "Content-Type: application/json" -d "$BODY")
-
-URL=$(printf '%s' "$RESP" | sed -n 's/.*"url":"\([^"]*\)".*/\1/p' | sed 's/\\//g')
-
-if [ -z "$URL" ]; then
-  echo "❌ API failed. Response:"
-  echo "$RESP"
-  exit 1
-fi
-
-echo "✅ Got builder URL"
-echo "$URL"
+echo "✅ Referral link ready"
+echo "$REF_URL"
 echo ""
 
-# --- Create themed HTML launcher ---
 OUT="$HOME/hive-builder.html"
 echo "Creating $OUT ..."
 
@@ -57,8 +34,8 @@ h1{color:#8fa87a;font-size:1.6rem;letter-spacing:.08em;margin-bottom:.4rem}
 <body>
 <div class="card">
   <h1>THE UNIVERSAL HIVE</h1>
-  <p class="sub">Site.pro Builder</p>
-  <a class="btn" href="$URL">OPEN BUILDER</a>
+  <p class="sub">Site.pro Referral</p>
+  <a class="btn" href="$REF_URL">GET STARTED</a>
   <p class="meta">Ink · Moss · Paper · Prime Directive</p>
 </div>
 </body>
@@ -67,5 +44,5 @@ EOF
 
 echo "✅ HTML saved to $OUT"
 echo ""
-echo "Done. Open $OUT in a browser or go to:"
-echo "$URL"
+echo "Done. Open $OUT or go to:"
+echo "$REF_URL"
