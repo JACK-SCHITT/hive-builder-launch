@@ -1,11 +1,8 @@
 #!/bin/sh
 # Universal Hive — Site.pro Referral Launcher
-# Run in iSH: sh hive.sh
-
 echo "🐝 Universal Hive — referral launcher"
 
 REF_URL="https://site.pro/?ref=2e06375fc2f1adee33bdabc39218f9c2"
-
 echo "✅ Referral link ready"
 echo "$REF_URL"
 echo ""
@@ -25,83 +22,89 @@ cat > "$OUT" << EOF
 body{
   background:#0c0d0b;
   color:#eeeee6;
-  font-family:system-ui,-apple-system,sans-serif;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:1.5rem;
+  padding:1.2rem;
   background-image:
-    radial-gradient(ellipse at 20% 30%, rgba(143,168,122,.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, rgba(143,168,122,.06) 0%, transparent 50%);
+    radial-gradient(circle at 15% 20%, rgba(143,168,122,.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(143,168,122,.08) 0%, transparent 45%),
+    linear-gradient(180deg, #0c0d0b 0%, #0a0b09 100%);
+}
+.wrap{
+  width:100%;
+  max-width:480px;
+  text-align:center;
+}
+.logo{
+  font-size:2.4rem;
+  font-weight:800;
+  letter-spacing:.18em;
+  color:#8fa87a;
+  text-shadow:0 0 24px rgba(143,168,122,.6);
+  margin-bottom:.2rem;
+}
+.tag{
+  color:#8fa87a;
+  opacity:.55;
+  font-size:.75rem;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  margin-bottom:2.5rem;
 }
 .card{
-  background:#111;
+  background:rgba(17,17,17,.85);
   border:1px solid #8fa87a;
-  border-radius:16px;
-  padding:3rem 2.2rem;
-  max-width:440px;
-  width:100%;
-  text-align:center;
+  border-radius:20px;
+  padding:2.8rem 1.8rem;
   box-shadow:
-    0 0 60px rgba(143,168,122,.15),
-    inset 0 1px 0 rgba(143,168,122,.2);
+    0 0 80px rgba(143,168,122,.2),
+    0 20px 40px rgba(0,0,0,.4),
+    inset 0 1px 0 rgba(143,168,122,.25);
   position:relative;
+  backdrop-filter:blur(4px);
 }
-.card::before{
+.card::after{
   content:"";
   position:absolute;
-  inset:8px;
-  border:1px solid rgba(143,168,122,.15);
-  border-radius:10px;
+  inset:12px;
+  border:1px solid rgba(143,168,122,.12);
+  border-radius:12px;
   pointer-events:none;
-}
-h1{
-  color:#8fa87a;
-  font-size:1.7rem;
-  letter-spacing:.12em;
-  font-weight:700;
-  margin-bottom:.3rem;
-}
-.sub{
-  color:#8fa87a;
-  opacity:.7;
-  font-size:.9rem;
-  letter-spacing:.04em;
-  margin-bottom:2.2rem;
 }
 .btn{
   display:inline-block;
   background:#8fa87a;
   color:#0c0d0b;
-  font-weight:800;
-  padding:1.1rem 2.6rem;
-  border-radius:12px;
+  font-weight:900;
+  padding:1.2rem 3rem;
+  border-radius:14px;
   text-decoration:none;
-  font-size:1.1rem;
-  letter-spacing:.04em;
-  box-shadow:0 4px 24px rgba(143,168,122,.35);
-  transition:transform .15s, box-shadow .15s;
+  font-size:1.15rem;
+  letter-spacing:.08em;
+  box-shadow:0 6px 28px rgba(143,168,122,.45);
+  margin:1.2rem 0;
 }
-.btn:hover,.btn:active{
-  transform:translateY(-2px);
-  box-shadow:0 8px 32px rgba(143,168,122,.5);
-}
+.btn:active{transform:scale(.97)}
 .meta{
-  margin-top:2rem;
-  font-size:.72rem;
+  margin-top:1.8rem;
+  font-size:.68rem;
   color:#8fa87a;
-  opacity:.5;
-  letter-spacing:.06em;
+  opacity:.4;
+  letter-spacing:.12em;
 }
 </style>
 </head>
 <body>
-<div class="card">
-  <h1>THE UNIVERSAL HIVE</h1>
-  <p class="sub">Prime Directive Active</p>
-  <a class="btn" href="$REF_URL">ENTER</a>
-  <p class="meta">INK · MOSS · PAPER</p>
+<div class="wrap">
+  <div class="logo">HIVE</div>
+  <div class="tag">Universal</div>
+  <div class="card">
+    <a class="btn" href="$REF_URL">ENTER</a>
+    <div class="meta">INK · MOSS · PAPER</div>
+  </div>
 </div>
 </body>
 </html>
